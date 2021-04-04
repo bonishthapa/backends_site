@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.deletion import SET_NULL
 from django.template.defaultfilters import slugify
 from django.urls import reverse
+import hashlib
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
@@ -69,10 +70,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 class MainTitle(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE,related_name='user',blank=True,null=True)
     title = models.CharField(max_length=250)
     slug = models.SlugField(unique=True,blank=True,null=True)
-    author = models.CharField(max_length=100)
     image = models.ImageField(upload_to='maintitle',blank=True,null=True)
     description = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -99,7 +99,6 @@ class SubTitle(models.Model):
     maintitle = models.ManyToManyField(MainTitle, related_name='subtitle')
     title = models.CharField(max_length=250)
     slug = models.SlugField(unique=True,blank=True,null=True)
-    author = models.CharField(max_length=100)
     image = models.ImageField(upload_to='subtitle',blank=True,null=True)
     description = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

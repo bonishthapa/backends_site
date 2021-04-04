@@ -1,4 +1,4 @@
-from django.db.models.query import QuerySet
+from django.shortcuts import render, redirect
 from rest_framework import status,viewsets,generics
 from rest_framework.decorators import  action
 from django.conf import settings
@@ -7,32 +7,31 @@ from rest_framework.parsers import ParseError
 from .serializers import MaintitleSerializer,SubtitleSerializer,NewUserSerializer
 from .models import MainTitle,SubTitle,User
 from rest_framework import filters
+from django.http import HttpResponse
 from .utils import Util
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.sites.shortcuts import get_current_site
 from django.urls import reverse
-import jwt
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.views import APIView
 from django.contrib.auth.hashers import make_password
-
-
+import jwt
+from rest_framework.permissions import IsAuthenticated,AllowAny
+ 
 
 
 class MaintitleApi(viewsets.ModelViewSet):
     queryset = MainTitle.objects.all()
     serializer_class = MaintitleSerializer
-    permission_classes = [IsAuthenticated]
+    #permission_classes = (IsAuthenticated,)
     lookup_field = 'slug'
     filter_backends = [filters.SearchFilter]
     search_fields = ['title']
 
-    def create(self, request, **kwargs):
-        serializer = MaintitleSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(user=request.user)
-            return Response(serializer.data)
+    #def create(self, request, **kwargs):
+    #    if self.request.user.is_active:
+    #        serializer = MaintitleSerializer(data=request.data)
+    #        if serializer.is_valid():
+    #            serializer.save(author=request.user)
+    #            return Response(serializer.data, status.HTTP_201_CREATED)
 
     def get(self, **kwargs):
         queryset = MainTitle.objects.all()
@@ -90,8 +89,7 @@ class Verify_Email(generics.GenericAPIView):
         try:
             payload = jwt.decode(token,settings.SECRET_KEY,algorithms=['HS256'])
             user = User.objects.get(id=payload['user_id'])
-            if not user.is_verified:
-                user.is_verified = True
+            if not user.is_active:
                 user.is_active = True
                 user.save()
                 return Response({'email':'Successfully verified email'},status=status.HTTP_201_CREATED)

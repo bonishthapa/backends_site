@@ -36,7 +36,7 @@ class SubtitleSerializer(serializers.ModelSerializer):
     image = serializers.ImageField(required = False)
     class Meta:
         model = SubTitle
-        fields = ['id','url','title','slug','author','image','description','created_on','available_on','maintitle']
+        fields = ['id','title','slug','image','description','created_on','available_on','maintitle']
         lookup_field = 'slug'
         extra_kwargs = {
             'url': {'lookup_field': 'slug'}
@@ -44,7 +44,7 @@ class SubtitleSerializer(serializers.ModelSerializer):
 
 
 class MaintitleSerializer(serializers.ModelSerializer):
-    user = serializers.CharField( source="user.username", read_only=True)
+    author = serializers.CharField( source="author.username", read_only=True)
     subtitle = SubtitleSerializer(many=True,read_only=True)
     slug = serializers.SerializerMethodField()
     def get_slug(self, instance):
@@ -58,7 +58,7 @@ class MaintitleSerializer(serializers.ModelSerializer):
         slug_field='title'
      )
         model = MainTitle
-        fields=['id','url','user','title','slug','author','image','description','created_on','subtitle']
+        fields=['id','author','title','slug','image','description','created_on','subtitle']
         lookup_field = 'slug'
         extra_kwargs = {
             'url': {'lookup_field': 'slug'}
