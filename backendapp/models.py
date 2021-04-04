@@ -2,10 +2,10 @@ from django.db import models
 from django.db.models.deletion import SET_NULL
 from django.template.defaultfilters import slugify
 from django.urls import reverse
-import hashlib
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
+from django.contrib.auth.hashers import make_password
 
 
 class CustomAccountManager(BaseUserManager):
@@ -34,7 +34,7 @@ class CustomAccountManager(BaseUserManager):
         email = self.normalize_email(email)
         user = self.model(email=email, username=username,
                           first_name=first_name, **other_fields)
-        user.set_password(password)
+        user.set_password(make_password(password))
         user.save()
         return user
 
@@ -60,13 +60,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.username
-
-    def set_password(self, raw_password):
-        import random
-        algo = 'sha1'
-        salt = get_hexdigest(algo, str(random.random()), str(random.random()))[:5]
-        hsh = get_hexdigest(algo, salt, raw_password)
-        self.password = '%s$%s$%s' % (algo, salt, hsh)
 
 
 class MainTitle(models.Model):

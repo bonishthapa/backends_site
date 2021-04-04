@@ -5,9 +5,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'dx3muu$*gm_fnn70=nq91jb!tm(1xf#&ttw46ubiim$=snf)on'
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','thapabonish.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','7d98047e3f46.ngrok.io']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
