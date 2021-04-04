@@ -5,10 +5,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'dx3muu$*gm_fnn70=nq91jb!tm(1xf#&ttw46ubiim$=snf)on'
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','192.168.2.104']
-
+ALLOWED_HOSTS = ['127.0.0.1','thapabonish.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -32,6 +31,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
