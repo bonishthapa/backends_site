@@ -62,15 +62,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backends_site.wsgi.application'
 
-DATABASES={
-   'default':{
-      'ENGINE':'django.db.backends.postgresql_psycopg2',
-      'NAME':'backends_site',
-      'USER':'postgres',
-      'PASSWORD':'bonish',
-      'HOST':'localhost',
-      'PORT':'5432',
-   }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 PASSWORD_HASHERS = [
