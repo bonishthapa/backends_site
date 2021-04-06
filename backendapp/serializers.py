@@ -50,7 +50,7 @@ class MaintitleSerializer(serializers.ModelSerializer):
     def get_slug(self, instance):
         return slugify(instance.title)
 
-    image = serializers.ImageField()
+    image = serializers.ImageField(required = False)
     class Meta:
         tracks = serializers.SlugRelatedField(
         many=True,

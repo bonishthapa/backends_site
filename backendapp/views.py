@@ -15,6 +15,7 @@ from django.urls import reverse
 from django.contrib.auth.hashers import make_password
 import jwt
 from rest_framework.permissions import IsAuthenticated,AllowAny
+from rest_framework.parsers import MultiPartParser, FormParser
  
 
 
@@ -32,6 +33,14 @@ class MaintitleApi(viewsets.ModelViewSet):
     #        if serializer.is_valid():
     #            serializer.save(author=request.user)
     #            return Response(serializer.data, status.HTTP_201_CREATED)
+
+    @action(detail=True, methods=['POST'])
+    def upload_image(request):
+        try:
+            file = request.data['file']
+        except KeyError:
+            raise ParseError('Request has no resource file attached')
+        MainTitle.objects.create(image=file)
 
     def get(self, **kwargs):
         queryset = MainTitle.objects.all()

@@ -1,44 +1,89 @@
-asgiref @ file:///tmp/build/80754af9/asgiref_1605055780383/work
+argon2-cffi @ file:///C:/ci/argon2-cffi_1613037869401/work
 astroid==2.4.2
+async-generator @ file:///home/ktietz/src/ci/async_generator_1611927993394/work
+attrs @ file:///tmp/build/80754af9/attrs_1604765588209/work
+backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
+beautifulsoup4 @ file:///home/linux1/recipes/ci/beautifulsoup4_1610988766420/work
+bleach @ file:///tmp/build/80754af9/bleach_1612211392645/work
+brotlipy==0.7.0
 certifi==2020.12.5
-cffi==1.14.5
-chardet==4.0.0
+cffi @ file:///C:/ci/cffi_1613247431367/work
+chardet @ file:///C:/ci/chardet_1607706937985/work
 colorama==0.4.4
-cryptography==3.4.6
-defusedxml==0.7.1
-Django @ file:///tmp/build/80754af9/django_1612212120213/work
-django-allauth==0.44.0
-django-braces==1.14.0
-django-cors-headers==3.7.0
-django-filter==2.4.0
-django-oauth-toolkit==1.4.1
-django-rest-framework-social-oauth2==1.1.0
-djangorestframework==3.12.2
-djangorestframework-simplejwt==4.6.0
-flake8==3.9.0
-gunicorn==20.1.0
-idna==2.10
+cryptography @ file:///C:/ci/cryptography_1613401636503/work
+cycler==0.10.0
+decorator @ file:///home/ktietz/src/ci/decorator_1611930055503/work
+defusedxml @ file:///home/ktietz/src/ci_mi/defusedxml_1612808095953/work
+entrypoints==0.3
+idna @ file:///home/linux1/recipes/ci/idna_1610986105248/work
+importlib-metadata @ file:///tmp/build/80754af9/importlib-metadata_1602276842396/work
+ipykernel @ file:///C:/ci/ipykernel_1607454116140/work/dist/ipykernel-5.3.4-py3-none-any.whl
+ipython @ file:///C:/ci/ipython_1612212932352/work
+ipython-genutils @ file:///tmp/build/80754af9/ipython_genutils_1606773439826/work
 isort==5.7.0
+jedi @ file:///C:/ci/jedi_1606932640618/work
+Jinja2 @ file:///tmp/build/80754af9/jinja2_1612213139570/work
+json5==0.9.5
+jsonschema @ file:///tmp/build/80754af9/jsonschema_1602607155483/work
+jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1601311786391/work
+jupyter-core @ file:///C:/ci/jupyter_core_1612213515523/work
+jupyterlab==2.2.6
+jupyterlab-pygments @ file:///tmp/build/80754af9/jupyterlab_pygments_1601490720602/work
+jupyterlab-server @ file:///tmp/build/80754af9/jupyterlab_server_1594164409481/work
+kiwisolver @ file:///C:/ci/kiwisolver_1612282555033/work
 lazy-object-proxy==1.4.3
+lxml @ file:///C:/ci/lxml_1606516942900/work
+MarkupSafe @ file:///C:/ci/markupsafe_1607027406824/work
+matplotlib @ file:///C:/ci/matplotlib-suite_1613408055530/work
 mccabe==0.6.1
-oauthlib==3.1.0
-Pillow==8.1.0
-psycopg2 @ file:///C:/ci/psycopg2_1612298766762/work
-pycodestyle==2.7.0
-pycparser==2.20
-pyflakes==2.3.0
-PyJWT==2.0.1
+mistune @ file:///C:/ci/mistune_1607359457024/work
+mkl-fft==1.2.1
+mkl-random==1.0.2
+mkl-service==2.3.0
+nbclient @ file:///tmp/build/80754af9/nbclient_1613676291033/work
+nbconvert @ file:///C:/ci/nbconvert_1607370555148/work
+nbformat @ file:///tmp/build/80754af9/nbformat_1610738111109/work
+nest-asyncio @ file:///tmp/build/80754af9/nest-asyncio_1613680548246/work
+notebook @ file:///C:/ci/notebook_1611323078032/work
+numpy==1.20.1
+olefile==0.46
+opencv-python==4.5.1.48
+packaging @ file:///tmp/build/80754af9/packaging_1611952188834/work
+pandas==1.2.3
+pandocfilters @ file:///C:/ci/pandocfilters_1605114832805/work
+parso==0.7.0
+pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
+Pillow @ file:///C:/ci/pillow_1609768760317/work
+prometheus-client @ file:///tmp/build/80754af9/prometheus_client_1606344362066/work
+prompt-toolkit @ file:///tmp/build/80754af9/prompt-toolkit_1602688806899/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+Pygments @ file:///tmp/build/80754af9/pygments_1613849567472/work
 pylint==2.6.0
-python3-openid==3.2.0
-pytz @ file:///tmp/build/80754af9/pytz_1612215392582/work
-requests==2.25.1
-requests-oauthlib==1.3.0
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1608057966937/work
+pyparsing @ file:///home/linux1/recipes/ci/pyparsing_1610983426697/work
+pyrsistent @ file:///C:/ci/pyrsistent_1607359751294/work
+PySocks @ file:///C:/ci/pysocks_1605307512533/work
+python-dateutil @ file:///home/ktietz/src/ci/python-dateutil_1611928101742/work
+pytz==2021.1
+pywin32==228
+pywinpty @ file:///C:/ci/pywinpty_1607419945780/work
+pyzmq==20.0.0
+requests @ file:///tmp/build/80754af9/requests_1608241421344/work
+scipy==1.6.1
+seaborn==0.11.1
+Send2Trash @ file:///tmp/build/80754af9/send2trash_1607525499227/work
+sip==4.19.13
 six==1.15.0
-social-auth-app-django==4.0.0
-social-auth-core==4.1.0
-sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+soupsieve @ file:///tmp/build/80754af9/soupsieve_1614023247537/work
+terminado==0.9.2
+testpath @ file:///home/ktietz/src/ci/testpath_1611930608132/work
 toml==0.10.2
-urllib3==1.26.3
-whitenoise==5.2.0
+tornado @ file:///C:/ci/tornado_1606924294691/work
+traitlets @ file:///home/ktietz/src/ci/traitlets_1611929699868/work
+urllib3 @ file:///tmp/build/80754af9/urllib3_1611694770489/work
+wcwidth @ file:///tmp/build/80754af9/wcwidth_1593447189090/work
+webencodings==0.5.1
+win-inet-pton @ file:///C:/ci/win_inet_pton_1605306162074/work
 wincertstore==0.2
 wrapt==1.12.1
+zipp @ file:///tmp/build/80754af9/zipp_1604001098328/work
