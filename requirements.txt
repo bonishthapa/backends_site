@@ -45,7 +45,7 @@ tzdata==2020f
 urllib3==1.26.3
 vc==14.2
 vs2015_runtime==14.27.29016
-wheel==0.36.2
+wheel==0.38.1
 whitenoise==5.2.0
 wincertstore==0.2
 zlib==1.2.11
