@@ -23,7 +23,7 @@ krb5==1.17.1
 libpq==12.2
 oauthlib==3.1.0
 openssl==1.1.1i
-pillow==8.1.0
+pillow==9.3.0
 pip==20.3.3
 psycopg2==2.8.6
 pycodestyle==2.7.0
